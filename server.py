@@ -12,10 +12,9 @@ PYTHON = "PY"
 SOFTWARE = "QA"
 DATABASE = "DB"
 
-python_notes = []
-software_notes = []
-database_notes = []
-connected_channel = ""
+python_notes = ["Testing read", "Work"]
+software_notes = ["SOFTWARE", "notes"]
+database_notes = ["database", "notes"]
 
 sending = False
 
@@ -24,9 +23,11 @@ server.bind(ADDR)
 
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
-
+    connected_channel = ""
     connected = True
+    writing = False
     while connected:
+
             msg_length = conn.recv(HEADER).decode(FORMAT)
             if msg_length:
                 msg_length = int(msg_length)
@@ -40,35 +41,37 @@ def handle_client(conn, addr):
                     connected_channel = "software"
                 if msg == DATABASE:
                     connected_channel = "database"
-                conn.send("WHAT".encode(FORMAT))
+
+            if(writing == True):
+                if (connected_channel == "python"):
+                    python_notes.append(msg)
+                if (connected_channel == "software"):
+                    software_notes.append(msg)
+                if(connected_channel == "database"):
+                    database_notes.append(msg)
+                writing = False
 
             if msg == "WRIT":
-                conn.send("YOU SAID WRIT".encode(FORMAT))
+                writing = True
+
             if msg == "READ":
-                conn.send("YOU SAID READ".encode(FORMAT))
+                conn.send(getAllNotesToString(connected_channel).encode(FORMAT))
 
-
+            conn.send("WHAT".encode(FORMAT))
             print(f"[{addr}] {msg}")
 
 
     conn.close()
 
-def getMsg(conn):
-    msg_length = conn.recv(HEADER).decode(FORMAT)
-    if msg_length:
-        msg_length = int(msg_length)
-        msg = conn.recv(msg_length).decode(FORMAT)
-    return msg
-def sendAllNotesInAssociatedChannel():
+def getAllNotesToString(connected_channel):
+    result = ""
     if (connected_channel == "python"):
-        for note in python_notes:
-            conn.send(note.encode(FORMAT))
+        result = '\n'.join(python_notes)
     if (connected_channel == "software"):
-        for note in software_notes:
-            conn.send(note.encode(FORMAT))
+        result = '\n'.join(software_notes)
     if(connected_channel == "database"):
-        for note in database_notes:
-            conn.send(note.encode(FORMAT))
+        result = '\n'.join(database_notes)
+    return result + "\n"
 
 def addNoteToAssociatedChannel(msg):
     if (connected_channel == "python"):
