@@ -4,9 +4,13 @@ import socket
 HEADER = 64
 PORT = 5050
 FORMAT = 'utf-8'
-DISCONNECT_MESSAGE = "!DISCONNECT"
-SERVER = "192.168.1.26"
+DISCONNECT_MESSAGE = "QUIT"
+SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT)
+PYTHON = "PY"
+SOFTWARE = "QA"
+DATABASE = "DB"
+
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(ADDR)
@@ -19,3 +23,22 @@ def send(msg):
     client.send(send_length)
     client.send(message)
     print(client.recv(2048).decode(FORMAT))
+
+
+def getInputForChannel():
+    val = input("Enter the Channel you want to join from PY, QA, DB: ")
+    while val not in (PYTHON,SOFTWARE,DATABASE,DISCONNECT_MESSAGE):
+        print("Channel not available!")
+        val = input("Enter the Channel you want to join from PY, QA, DB: ")
+    return val
+
+def main():
+    val = getInputForChannel()
+    send(val)
+    while (val != DISCONNECT_MESSAGE):
+        val = input("Message: ")
+        send(val)
+
+
+if __name__ == "__main__":
+    main()
