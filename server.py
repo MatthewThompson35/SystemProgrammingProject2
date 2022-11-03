@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import socket
 import threading
+import logging
 
 HEADER = 64
 PORT = 5050
@@ -11,6 +12,7 @@ DISCONNECT_MESSAGE = "QUIT"
 PYTHON = "PY"
 SOFTWARE = "QA"
 DATABASE = "DB"
+
 
 python_notes = ["Testing read", "Work"]
 software_notes = ["SOFTWARE", "notes"]
@@ -23,11 +25,11 @@ server.bind(ADDR)
 
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
+    logging.info("Client connected at: " + addr[0])
     connected_channel = ""
     connected = True
     writing = False
     while connected:
-
             msg_length = conn.recv(HEADER).decode(FORMAT)
             if msg_length:
                 msg_length = int(msg_length)
@@ -91,6 +93,7 @@ def start():
         print(f"[ACTIVE CONNECTIONS] {threading.activeCount() - 1}")
 
 def main():
+    logging.basicConfig(filename='serverlog.log', level=logging.INFO)
     print("[STARTING] server is starting...")
     start()
 
