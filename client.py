@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import socket
+import re
 
 HEADER = 64
 PORT = 5050
@@ -10,6 +11,8 @@ ADDR = (SERVER, PORT)
 PYTHON = "PY"
 SOFTWARE = "QA"
 DATABASE = "DB"
+
+writing = False
 
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -27,10 +30,17 @@ def send(msg):
 
 def getInputForChannel():
     val = input("Enter the Channel you want to join from PY, QA, DB: ")
-    while val not in (PYTHON,SOFTWARE,DATABASE,DISCONNECT_MESSAGE):
+    while not (checkChannelInput(val)):
         print("Channel not available!")
         val = input("Enter the Channel you want to join from PY, QA, DB: ")
     return val
+
+def checkChannelInput(val):
+    regex = re.compile("^(PY|QA|DB)$")
+    if(regex.match(val)):
+        return True
+    return False
+
 
 def main():
     val = getInputForChannel()

@@ -3,6 +3,9 @@ import socket
 import threading
 import logging
 
+"""
+To run tests server must be running. After tests server crashes. Could not get this fixed
+"""
 HEADER = 64
 PORT = 5050
 SERVER = socket.gethostbyname(socket.gethostname())
@@ -14,9 +17,9 @@ SOFTWARE = "QA"
 DATABASE = "DB"
 
 
-python_notes = ["Testing read", "Work"]
-software_notes = ["SOFTWARE", "notes"]
-database_notes = ["database", "notes"]
+python_notes = []
+software_notes = []
+database_notes = []
 
 sending = False
 
@@ -46,11 +49,17 @@ def handle_client(conn, addr):
 
             if(writing == True):
                 if (connected_channel == "python"):
-                    python_notes.append(msg)
+                    result = str(addr)
+                    result += " " + msg
+                    python_notes.append(result)
                 if (connected_channel == "software"):
-                    software_notes.append(msg)
+                    result = str(addr)
+                    result += " " + msg
+                    software_notes.append(result)
                 if(connected_channel == "database"):
-                    database_notes.append(msg)
+                    result = str(addr)
+                    result += " " + msg
+                    database_notes.append(result)
                 writing = False
 
             if msg == "WRIT":
@@ -62,7 +71,7 @@ def handle_client(conn, addr):
             conn.send("WHAT".encode(FORMAT))
             print(f"[{addr}] {msg}")
 
-
+    logging.info("Client disconnected at: " + addr[0])
     conn.close()
 
 def getAllNotesToString(connected_channel):
