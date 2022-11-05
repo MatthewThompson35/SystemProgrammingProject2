@@ -4,7 +4,7 @@ import threading
 import logging
 
 """
-To run tests server must be running. After tests server crashes. Could not get this fixed
+To run tests server must be running. testing must be set to true otherwise testing must be set to false
 """
 HEADER = 64
 PORT = 5050
@@ -22,6 +22,7 @@ software_notes = []
 database_notes = []
 
 sending = False
+testing = False
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
@@ -33,6 +34,8 @@ def handle_client(conn, addr):
     connected = True
     writing = False
     while connected:
+            if(testing):
+                msg = DISCONNECT_MESSAGE
             msg_length = conn.recv(HEADER).decode(FORMAT)
             if msg_length:
                 msg_length = int(msg_length)

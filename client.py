@@ -41,6 +41,8 @@ def checkChannelInput(val):
         return True
     return False
 
+def close():
+        client.close()
 
 def main():
     val = getInputForChannel()
@@ -48,6 +50,7 @@ def main():
     while (val != DISCONNECT_MESSAGE):
         val = input("Message: ")
         send(val)
+
 
 
 if __name__ == "__main__":
