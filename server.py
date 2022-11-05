@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Server module."""
+"""Server module. For testing Set TESTING to True"""
 import socket
 import threading
 import logging
@@ -19,10 +19,10 @@ PYTHON_NOTES = []
 SOFTWARE_NOTES = []
 DATABASE_NOTES = []
 
-TESTING = False
+TESTING = True
 
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(ADDR)
+SERV = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+SERV.bind(ADDR)
 
 
 
@@ -52,19 +52,7 @@ def handle_client(conn, addr):
             if msg == DATABASE:
                 connected_channel = "database"
         elif writing:
-            if connected_channel == "python":
-                result = str(addr)
-                result += " " + msg
-                PYTHON_NOTES.append(result)
-            if connected_channel == "software":
-                result = str(addr)
-                result += " " + msg
-                SOFTWARE_NOTES.append(result)
-            if connected_channel == "database":
-                result = str(addr)
-                result += " " + msg
-                DATABASE_NOTES.append(result)
-            writing = False
+            writing = add_notes_to_channel(connected_channel, msg, addr)
         elif msg == "WRIT":
             writing = True
         elif msg == "READ":
@@ -76,6 +64,21 @@ def handle_client(conn, addr):
     logging.info("Client disconnected at: %s", ip_address)
     conn.close()
 
+def add_notes_to_channel(connected_channel, msg, addr):
+    """Adds notes to the specified channel"""
+    if connected_channel == "python":
+        result = str(addr)
+        result += " " + msg
+        PYTHON_NOTES.append(result)
+    if connected_channel == "software":
+        result = str(addr)
+        result += " " + msg
+        SOFTWARE_NOTES.append(result)
+    if connected_channel == "database":
+        result = str(addr)
+        result += " " + msg
+        DATABASE_NOTES.append(result)
+    return False
 
 def get_all_notes_to_string(connected_channel):
     """Gets all of the notes that are in the correlated channel """
@@ -91,10 +94,10 @@ def get_all_notes_to_string(connected_channel):
 
 def start():
     """Starts the server"""
-    server.listen()
+    SERV.listen()
     print(f"[LISTENING] Server is listening on {SERVER}")
     while True:
-        conn, addr = server.accept()
+        conn, addr = SERV.accept()
         thread = threading.Thread(target=handle_client, args=(conn, addr))
         thread.start()
         print(f"[ACTIVE CONNECTIONS] {threading.activeCount() - 1}")

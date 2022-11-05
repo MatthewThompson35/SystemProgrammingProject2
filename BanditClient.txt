@@ -1,0 +1,44 @@
+Run started:2022-11-05 18:08:52.023642
+
+Test results:
+>> Issue: [B322:blacklist] The input method in Python 2 will read from standard input, evaluate and run the resulting string as python source code. This is similar, though in many ways worse, then using eval. On Python 2, use raw_input instead, input is safe in Python 3.
+   Severity: High   Confidence: High
+   Location: client.py:34
+33	    """Gets the input for the channel"""
+34	    val = input("Enter the Channel you want to join from PY, QA, DB: ")
+35	    while not check_channel_input(val):
+
+--------------------------------------------------
+>> Issue: [B322:blacklist] The input method in Python 2 will read from standard input, evaluate and run the resulting string as python source code. This is similar, though in many ways worse, then using eval. On Python 2, use raw_input instead, input is safe in Python 3.
+   Severity: High   Confidence: High
+   Location: client.py:37
+36	        print("Channel not available!")
+37	        val = input("Enter the Channel you want to join from PY, QA, DB: ")
+38	    return val
+
+--------------------------------------------------
+>> Issue: [B322:blacklist] The input method in Python 2 will read from standard input, evaluate and run the resulting string as python source code. This is similar, though in many ways worse, then using eval. On Python 2, use raw_input instead, input is safe in Python 3.
+   Severity: High   Confidence: High
+   Location: client.py:56
+55	    while val != DISCONNECT_MESSAGE:
+56	        val = input("Message: ")
+57	        send(val)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 48
+	Total lines skipped (#nosec): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 3
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 3
+Files skipped (0):

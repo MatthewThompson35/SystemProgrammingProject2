@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Client for the server"""
 import socket
 import re
 
@@ -12,42 +13,46 @@ PYTHON = "PY"
 SOFTWARE = "QA"
 DATABASE = "DB"
 
-writing = False
 
 
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect(ADDR)
+CLIENT = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+CLIENT.connect(ADDR)
 
 def send(msg):
+    """sends the message to the server"""
     message = msg.encode(FORMAT)
     msg_length = len(message)
     send_length = str(msg_length).encode(FORMAT)
     send_length += b' ' * (HEADER - len(send_length))
-    client.send(send_length)
-    client.send(message)
-    print(client.recv(2048).decode(FORMAT))
+    CLIENT.send(send_length)
+    CLIENT.send(message)
+    print(CLIENT.recv(2048).decode(FORMAT))
 
 
-def getInputForChannel():
+def get_input_for_channel():
+    """Gets the input for the channel"""
     val = input("Enter the Channel you want to join from PY, QA, DB: ")
-    while not (checkChannelInput(val)):
+    while not check_channel_input(val):
         print("Channel not available!")
         val = input("Enter the Channel you want to join from PY, QA, DB: ")
     return val
 
-def checkChannelInput(val):
+def check_channel_input(val):
+    """Checks if the input for channel is valid"""
     regex = re.compile("^(PY|QA|DB)$")
-    if(regex.match(val)):
+    if regex.match(val):
         return True
     return False
 
 def close():
-        client.close()
+    """Closes the client"""
+    CLIENT.close()
 
 def main():
-    val = getInputForChannel()
+    """Main function"""
+    val = get_input_for_channel()
     send(val)
-    while (val != DISCONNECT_MESSAGE):
+    while val != DISCONNECT_MESSAGE:
         val = input("Message: ")
         send(val)
 
