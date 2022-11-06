@@ -1,10 +1,14 @@
-Run started:2022-11-05 18:09:26.742377
+
+I Could not get this to actually produce the right output. My server runs but bandit says there is a syntax error. tried finding it and could not figure out why it was messing up.
+
+
+Run started:2022-11-06 17:39:02.589115
 
 Test results:
 	No issues identified.
 
 Code scanned:
-	Total lines of code: 93
+	Total lines of code: 99
 	Total lines skipped (#nosec): 0
 
 Run metrics:

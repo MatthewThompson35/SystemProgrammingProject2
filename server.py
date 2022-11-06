@@ -57,13 +57,18 @@ def handle_client(conn, addr):
             writing = True
         elif msg == "READ":
             conn.send(get_all_notes_to_string(connected_channel).encode(FORMAT))
-
-        conn.send("WHAT".encode(FORMAT))
+        get_ending(msg, conn)
         print(f"[{addr}] {msg}")
 
     logging.info("Client disconnected at: %s", ip_address)
     conn.close()
 
+def get_ending(msg, conn):
+    """gets the ending message"""
+    if msg == "WRIT":
+        conn.send("SEND".encode(FORMAT))
+    else:
+        conn.send("WHAT".encode(FORMAT))
 def add_notes_to_channel(connected_channel, msg, addr):
     """Adds notes to the specified channel"""
     if connected_channel == "python":
@@ -89,8 +94,6 @@ def get_all_notes_to_string(connected_channel):
     if connected_channel == "database":
         result = '\n'.join(DATABASE_NOTES)
     return result + "\n"
-
-
 
 def start():
     """Starts the server"""
