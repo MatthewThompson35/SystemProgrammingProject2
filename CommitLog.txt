@@ -1,0 +1,59 @@
+commit 8da6ad17e3d1c788839598dfdac76b59d38d81c8
+Author: mthomp35 <mthomp35@cs3280-vm06.uwg.westga.edu>
+Date:   Sun Nov 6 12:45:49 2022 -0500
+
+    Finished up project
+
+commit f00939bf363db2185669c0963a0b3a245f63437a
+Author: mthomp35 <mthomp35@cs3280-vm28.uwg.westga.edu>
+Date:   Sat Nov 5 14:10:43 2022 -0400
+
+    fixed pylint issues and added bandit logs
+
+commit 1d33551d86cdd55f7a4a469a88ce98958f12b3ff
+Author: mthomp35 <mthomp35@cs3280-vm14.uwg.westga.edu>
+Date:   Fri Nov 4 21:47:07 2022 -0400
+
+    fixed pylint errors on server
+
+commit 0660eedfa3b4120eafdc25b7cafbdc7525929ed8
+Author: mthomp35 <mthomp35@cs3280-vm14.uwg.westga.edu>
+Date:   Fri Nov 4 20:45:07 2022 -0400
+
+    Fixed testing to not crash server
+
+commit 5322621dfda6d39278dd4e87c79016308158fb6e
+Author: mthomp35 <mthomp35@cs3280-vm14.uwg.westga.edu>
+Date:   Fri Nov 4 19:40:00 2022 -0400
+
+    Added client tests. Have to run server before
+
+commit 287d6c18b1b97c30285fc9bc7ef087c265556bac
+Author: mthomp35 <mthomp35@cs3280-vm07.uwg.westga.edu>
+Date:   Thu Nov 3 15:02:28 2022 -0400
+
+    Added basic logging for when client connects
+
+commit 68b44633826cc2ce5bfbd459b4ed28b74cfadfe2
+Author: mthomp35 <mthomp35@cs3280-vm07.uwg.westga.edu>
+Date:   Thu Nov 3 14:20:06 2022 -0400
+
+    WRIT, READ work. Can communicate between clients
+
+commit 8b557b49428d75bb5ee5894a182df70833f0aeff
+Author: mthomp35 <mthomp35@cs3280-vm11.uwg.westga.edu>
+Date:   Wed Nov 2 22:39:32 2022 -0400
+
+    Added channels and basic input for client
+
+commit 71b3f4484948584048c5c937a25c94c39dfc6d75
+Author: mthomp35 <mthomp35@cs3280-vm10.uwg.westga.edu>
+Date:   Mon Oct 31 18:13:04 2022 -0400
+
+    Setup server and client python files
+
+commit a5a05e59f592081f95afd4b52699f4701857a182
+Author: Matthew Thompson <mthomp35@my.westga.edu>
+Date:   Mon Oct 31 17:38:50 2022 -0400
+
+    Initial Commit
