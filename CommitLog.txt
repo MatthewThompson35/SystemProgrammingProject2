@@ -1,3 +1,15 @@
+commit 074b390281acea750dbb58f0bce8e1761883563a
+Author: mthomp35 <mthomp35@cs3280-vm01.uwg.westga.edu>
+Date:   Mon Nov 7 13:14:54 2022 -0500
+
+    Fixed server Bandit
+
+commit 64e645f000ae58869b3bdca466e70666f2fdba36
+Author: mthomp35 <mthomp35@cs3280-vm06.uwg.westga.edu>
+Date:   Sun Nov 6 12:46:39 2022 -0500
+
+    added commit log
+
 commit 8da6ad17e3d1c788839598dfdac76b59d38d81c8
 Author: mthomp35 <mthomp35@cs3280-vm06.uwg.westga.edu>
 Date:   Sun Nov 6 12:45:49 2022 -0500
