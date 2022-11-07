@@ -1,8 +1,4 @@
-
-I Could not get this to actually produce the right output. My server runs but bandit says there is a syntax error. tried finding it and could not figure out why it was messing up.
-
-
-Run started:2022-11-06 17:39:02.589115
+Run started:2022-11-07 18:12:23.901031
 
 Test results:
 	No issues identified.
@@ -13,14 +9,13 @@ Code scanned:
 
 Run metrics:
 	Total issues (by severity):
-		Undefined: 0
-		Low: 0
-		Medium: 0
-		High: 0
+		Undefined: 0.0
+		Low: 0.0
+		Medium: 0.0
+		High: 0.0
 	Total issues (by confidence):
-		Undefined: 0
-		Low: 0
-		Medium: 0
-		High: 0
-Files skipped (1):
-	server.py (syntax error while parsing AST from file)
+		Undefined: 0.0
+		Low: 0.0
+		Medium: 0.0
+		High: 0.0
+Files skipped (0):
