@@ -23,11 +23,12 @@ TESTING = True
 
 SERV = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 SERV.bind(ADDR)
-
+LOCK = threading.Lock()
 
 
 
 def handle_client(conn, addr):
+
     """ Handles all of the mesages that the client sends to the server"""
     print(f"[NEW CONNECTION] {addr} connected.")
     ip_address = str(addr[0])
@@ -52,7 +53,10 @@ def handle_client(conn, addr):
             if msg == DATABASE:
                 connected_channel = "database"
         elif writing:
+            LOCK.acquire()
             writing = add_notes_to_channel(connected_channel, msg, addr)
+            LOCK.release()
+
         elif msg == "WRIT":
             writing = True
         elif msg == "READ":
