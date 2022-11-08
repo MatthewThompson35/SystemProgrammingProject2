@@ -1,3 +1,6 @@
+Tried to do the same thing I did before to fix it by running bandit but everytime I tried to make a virtual env running python3.9 it said it was missing packages and would not let me create it. Only thing I added to it since I ran is a lock.
+
+
 Run started:2022-11-07 18:12:23.901031
 
 Test results:
