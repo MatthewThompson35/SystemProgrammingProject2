@@ -12,11 +12,16 @@ ADDR = (SERVER, PORT)
 PYTHON = "PY"
 SOFTWARE = "QA"
 DATABASE = "DB"
+RUNNING = True
 
 
+try:
+    CLIENT = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    CLIENT.connect(ADDR)
+except:
+    RUNNING = False
+    print("Server is not running yet")
 
-CLIENT = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-CLIENT.connect(ADDR)
 
 def send(msg):
     """sends the message to the server"""
@@ -50,11 +55,15 @@ def close():
 
 def main():
     """Main function"""
-    val = get_input_for_channel()
-    send(val)
-    while val != DISCONNECT_MESSAGE:
-        val = input("Message: ")
+    if RUNNING:
+        CLIENT = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        val = get_input_for_channel()
         send(val)
+        while val != DISCONNECT_MESSAGE:
+            val = input("Message: ")
+            send(val)
+
+
 
 
 
