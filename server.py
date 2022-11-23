@@ -43,6 +43,7 @@ def handle_client(conn, addr):
         if msg_length:
             msg_length = int(msg_length)
             msg = conn.recv(msg_length).decode(FORMAT)
+        logging.info("Message sent by %s -- %s", addr, msg)
         if msg == DISCONNECT_MESSAGE:
             connected = False
         elif msg in (PYTHON, SOFTWARE, DATABASE, DISCONNECT_MESSAGE):
@@ -113,7 +114,7 @@ def start():
 
 def main():
     """The main function"""
-    logging.basicConfig(filename='serverlog.log', level=logging.INFO)
+    logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', filename='serverlog.log', level=logging.INFO, datefmt='%Y-%m-%d %H:%M:%S')
     print("[STARTING] server is starting...")
     start()
 

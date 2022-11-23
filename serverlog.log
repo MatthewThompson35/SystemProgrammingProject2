@@ -1,86 +1,19 @@
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
-INFO:root:Client connected at: 127.0.0.1
-INFO:root:Client disconnected at: 127.0.0.1
+2022-11-23 11:01:47 INFO     Client connected at: 127.0.0.1
+2022-11-23 11:01:58 INFO     Message sent by ('127.0.0.1', 42892) -- MESSAGE
+2022-11-23 11:05:16 INFO     Client disconnected at: 127.0.0.1
+2022-11-23 11:05:58 INFO     Client connected at: 127.0.0.1
+2022-11-23 11:06:06 INFO     Message sent by ('127.0.0.1', 42910) -- Water
+2022-11-23 11:07:14 INFO     Client disconnected at: 127.0.0.1
+2022-11-23 11:08:52 INFO     Client connected at: 127.0.0.1
+2022-11-23 11:10:17 INFO     Client connected at: 127.0.0.1
+2022-11-23 11:12:18 INFO     Client connected at: 127.0.0.1
+2022-11-23 11:16:23 INFO     Client connected at: 127.0.0.1
+2022-11-23 11:16:32 INFO     Message sent by ('127.0.0.1', 42932) -- WORK
+2022-11-23 11:19:04 INFO     Client connected at: 127.0.0.1
+2022-11-23 11:20:51 INFO     Client connected at: 127.0.0.1
+2022-11-23 11:21:01 INFO     Message sent by ('127.0.0.1', 42944) -- PY
+2022-11-23 11:21:05 INFO     Message sent by ('127.0.0.1', 42944) -- WRIT
+2022-11-23 11:21:10 INFO     Message sent by ('127.0.0.1', 42944) -- Writing
+2022-11-23 11:21:13 INFO     Message sent by ('127.0.0.1', 42944) -- READ
+2022-11-23 11:21:21 INFO     Message sent by ('127.0.0.1', 42944) -- QUIT
+2022-11-23 11:21:21 INFO     Client disconnected at: 127.0.0.1
